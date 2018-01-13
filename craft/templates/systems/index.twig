@@ -11,17 +11,14 @@
  #}
 
 {% extends "_layout" %}
-{% set title = "News" %}
+{% set title = "Systems" %}
 
 {% block content %}
-	<h1>News</h1>
+    <h1>Systems</h1>
 
-	{% for entry in craft.entries.section('news').find() %}
-		<article>
-			<h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
-			<p>Posted on {{ entry.postDate.format('F d, Y') }}</p>
-			{{ entry.body.getPage(1) }}
-			<p><a href="{{ entry.url }}">Continue reading</a></p>
-		</article>
-	{% endfor %}
+    {% for entry in craft.entries.section('systems').find() %}
+
+        <li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
+
+    {% endfor %}
 {% endblock %}
